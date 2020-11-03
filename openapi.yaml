@@ -1,0 +1,27 @@
+openapi: 3.0.3
+info:
+  title: Conversations
+  description: The Conversations API provides a single entry point for users to carry out conversations across multiple supported messaging apps without losing any history.
+  version: 1
+servers:
+  - url: 'http://pantheon.api/conversations'
+paths:
+  /startConversation:
+    post:
+      description: Begin a conversation via a supported messaging app.
+      parameters:
+        - in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {}
+      tags:
+        - Engaging in conversations
+  /replyToConversation:
+    put:
+      description: ''
+      responses: {}
+      tags:
+        - Engaging in conversations
