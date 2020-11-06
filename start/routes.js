@@ -3,5 +3,5 @@
 const Route = use('Route')
 
 Route.get('/', () => {
-  return {hello: 'world'};
+    return {hello: 'world'};
 });
