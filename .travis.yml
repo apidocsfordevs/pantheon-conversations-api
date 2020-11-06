@@ -7,16 +7,18 @@ branches:
 cache:
   npm: true
 script:
-  # First, transform OpenAPI to Markdown
   - npm i -g widdershins
   - widdershins ./openapi.yaml -o output.md
-  # Then push it to the docs repo
-  - git config --global user.name "${GH_NAME}"
-  - git config --global user.email "${GH_EMAIL}"
-  - echo "machine github.com login ${GH_NAME} password ${GH_TOKEN}" > ~/.netrc
-  - git clone https://github.com/apidocsfordevs/pantheon-docs.git
+  - 'git config --global user.name "${GH_NAME}"'
+  - 'git config --global user.email "${GH_EMAIL}"'
+  - 'echo "machine github.com login ${GH_NAME} password ${GH_TOKEN}" > ~/.netrc'
+  - 'git clone https://github.com/apidocsfordevs/pantheon-docs.git'
   - cd pantheon-docs
   - cp ../output.md ./docs/conversations.md
   - git add ./docs/conversations.md
   - git commit -m "Built docs via Travis CI" --allow-empty
   - git push
+before_install:
+  - npm install dredd@13.1.2 --global
+before_script:
+  - dredd
