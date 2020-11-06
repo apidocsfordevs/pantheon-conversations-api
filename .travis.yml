@@ -22,3 +22,4 @@ before_install:
   - npm install dredd@13.1.2 --global
 before_script:
   - dredd
+  - cp .env.example .env && sed -i '/APP_KEY=/c\APP_KEY=tkkhukhsdfdfhagstghj'
