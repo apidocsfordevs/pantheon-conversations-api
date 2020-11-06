@@ -15,5 +15,5 @@ Route.post('/startConversation', async ({request}) => {
             with_user_id: request.input('with'),
             by_user_id: 34,
         });
-    return {conversationId: `${conversationId}`};
+    return true;
 })
