@@ -18,5 +18,5 @@ script:
   - cd pantheon-docs
   - cp ../output.md ./docs/conversations.md
   - git add ./docs/conversations.md
-  - git commit -m "Built docs via Travis CI"
+  - git commit -m "Built docs via Travis CI" --allow-empty
   - git push
