@@ -1,17 +1,8 @@
-# Node modules
 node_modules
-
-# Adonis directory for storing tmp files
-tmp
-
-# Environment variables, never commit this file
+build
+coverage
+.vscode
+.DS_STORE
 .env
-
-# Lock files
-package-lock.json
-yarn.lock
-
-# The development sqlite file
-database/development.sqlite
-
+tmp
 .idea/
